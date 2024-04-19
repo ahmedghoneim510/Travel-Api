@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
         apiPrefix: 'api/V1',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->group('role', [\App\Http\Middleware\RoleMiddleware::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

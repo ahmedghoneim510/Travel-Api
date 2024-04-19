@@ -12,18 +12,6 @@ class TourController extends Controller
 {
     public function index(Travel $travel , ToursListRequest $request)
     {
-//        $request->validate([
-//            'priceFrom'=>'numeric|nullable',
-//            'priceTo'=>'numeric|nullable',
-//            'dateFrom'=>'date',
-//            'dateTo'=>'date',
-//            'sortBy'=>Rule::in('price'),
-//            'sortOrder'=>Rule::in('desc','asc'),
-//        ],[
-//            'sortBy'=>"The sortBy must be in 'price' value",
-//            'sortOrder'=>'The sortOrder must be in "desc" or "asc" value'
-//
-//        ]);
 
         $tours= $travel->tours()
             ->filter($request->query())
